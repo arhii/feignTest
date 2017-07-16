@@ -1,4 +1,4 @@
-package pl.arhii.Feign_test;
+package pl.arhii.Feign_test.REST;
 
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,8 +9,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 public interface RestService {
 
     @RequestMapping(method = RequestMethod.GET, path = "/hello")
-    String hello(@RequestParam String name);
+    String hello(@RequestParam(value = "name") String name);
+//    String hello(@RequestParam String name);
 
+    /*@RequestMapping(method = RequestMethod.POST, path = "/test")
+    String test(@RequestParam String text);*/
     @RequestMapping(method = RequestMethod.POST, path = "/test")
-    String test(@RequestParam String text);
+    String test(@RequestParam(value = "text") String text);
 }

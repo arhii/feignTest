@@ -5,8 +5,9 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.feign.EnableFeignClients;
 
+//@Configuration
 @SpringBootApplication
-@EnableFeignClients
+@EnableFeignClients(basePackages = "pl.arhii.Feign_test.REST")
 @EnableAutoConfiguration
 public class FeignTestApplication {
 
